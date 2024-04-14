@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparação de Veículos Elétricos - Comparar Veículos</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Comparação de Veículos Elétricos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Início</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="compare.html">Comparar Veículos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">Sobre</a>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Galeria de Carros</a>
+          </li>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="container mt-5">
+    <h1>Comparar Veículos</h1>
+    <form id="comparisonForm">
+        <div class="form-group">
+            <label for="vehicle1">Veículo 1</label>
+            <input type="text" class="form-control" id="vehicle1" placeholder="Digite o nome do veículo 1">
+        </div>
+        <div class="form-group">
+            <label for="price1">Preço do Veículo 1</label>
+            <input type="text" class="form-control" id="price1" placeholder="Digite o preço do veículo 1">
+        </div>
+        <div class="form-group">
+            <label for="range1">Potencia (kWh)</label>
+            <input type="number" class="form-control" id="range1" placeholder="Digite o alcance do veículo 1">
+        </div>
+        <div class="form-group">
+            <label for="efficiency1">Eficiência Energética do Veículo 1 (kWh/100km)</label>
+            <input type="number" class="form-control" id="efficiency1" placeholder="Digite a eficiência energética do veículo 1">
+        </div>
+
+        <div class="form-group">
+            <label for="vehicle2">Veículo 2</label>
+            <input type="text" class="form-control" id="vehicle2" placeholder="Digite o nome do veículo 2">
+        </div>
+        <div class="form-group">
+            <label for="price2">Preço do Veículo 2</label>
+            <input type="text" class="form-control" id="price2" placeholder="Digite o preço do veículo 2">
+        </div>
+        <div class="form-group">
+            <label for="range2">Potencia (kWh)</label>
+            <input type="number" class="form-control" id="range2" placeholder="Digite o alcance do veículo 2">
+        </div>
+        <div class="form-group">
+            <label for="efficiency2">Eficiência Energética do Veículo 2 (kWh/100km)</label>
+            <input type="number" class="form-control" id="efficiency2" placeholder="Digite a eficiência energética do veículo 2">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Comparar</button>
+    </form>
+</div>
+  <!-- Fim do formulário -->
+
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('comparisonForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Evita o comportamento padrão de envio do formulário
+
+      // Obter valores dos campos do formulário
+      var vehicle1 = document.getElementById('vehicle1').value;
+      var price1 = parseFloat(document.getElementById('price1').value);
+      var range1 = parseInt(document.getElementById('range1').value);
+      var efficiency1 = parseInt(document.getElementById('efficiency1').value);
+
+      var vehicle2 = document.getElementById('vehicle2').value;
+      var price2 = parseFloat(document.getElementById('price2').value);
+      var range2 = parseInt(document.getElementById('range2').value);
+      var efficiency2 = parseInt(document.getElementById('efficiency2').value);
+
+      // Comparar os valores dos veículos com os da galeria
+      var result = compareWithGallery(vehicle1, price1, range1, efficiency1, vehicle2, price2, range2, efficiency2);
+      document.getElementById('comparisonResult').innerHTML = result;
+    });
+
+    // Função para comparar os veículos com os da galeria
+    function compareWithGallery(vehicle1, price1, range1, efficiency1, vehicle2, price2, range2, efficiency2) {
+      // Obter todos os itens da galeria
+      var galleryItems = document.querySelectorAll('.gallery-item');
+      var comparisonResult = '<h2>Resultado da Comparação</h2>';
+
+      // Comparar os veículos do formulário com os da galeria
+      for (var i = 0; i < galleryItems.length; i++) {
+        var item = galleryItems[i];
+        var modelName = item.getAttribute('data-model');
+        if (modelName === vehicle1 || modelName === vehicle2) {
+          // Obter os detalhes do veículo da galeria
+          var price = parseFloat(item.getAttribute('data-price'));
+          var range = parseInt(item.getAttribute('data-range'));
+          var efficiency = parseInt(item.getAttribute('data-efficiency'));
+
+          // Comparar os detalhes e gerar o resultado
+          if (modelName === vehicle1) {
+            comparisonResult += '<h4>' + modelName + '</h4>';
+            comparisonResult += '<p>Preço: R$ ' + price.toFixed(2) + '</p>';
+            comparisonResult += '<p>Alcance: ' + range + ' km</p>';
+            comparisonResult += '<p>Eficiência: ' + efficiency + ' kWh/100km</p>';
+          } else if (modelName === vehicle2) {
+            comparisonResult += '<h4>' + modelName + '</h4>';
+            comparisonResult += '<p>Preço: R$ ' + price.toFixed(2) + '</p>';
+            comparisonResult += '<p>Alcance: ' + range + ' km</p>';
+            comparisonResult += '<p>Eficiência: ' + efficiency + ' kWh/100km</p>';
+          }
+        }
+      }
+
+      return comparisonResult;
+    }
+  });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

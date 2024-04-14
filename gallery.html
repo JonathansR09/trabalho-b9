@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparação de Veículos Elétricos - Galeria de Carros</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Estilo para a galeria de carros */
+    .car-gallery {
+      margin-top: 50px;
+    }
+    .car-gallery h1 {
+      text-align: center;
+    }
+    .car-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+    .car-image:hover {
+      transform: scale(1.05);
+    }
+    .car-name {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 18px;
+      color: #333;
+    }
+    .car-description {
+      text-align: left;
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Comparação de Veículos Elétricos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Início</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="compare.html">Comparar Veículos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">Sobre</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="gallery.html">Galeria de Carros</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container car-gallery">
+    <h1>Galeria de Carros dos mais vendidos</h1>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <img src="/img/renault-kwid-e-tech---avaliacao---externas-2.webp" class="img-fluid car-image" alt="Carro 1">
+        <p class="car-name">renault-kwid-e-tech</p>
+        <div class="car-description">
+          <p>Preço: R$ 99.990
+            Bateria: 26,7 kWh
+            Potência e torque: 65 cv (48 kW) e 11,5 kgfm
+            Autonomia (Inmetro PBEV): 185 km
+            Recarga a 7,4 kWh (20% - 100%): 2 horas e 54 minutos
+            Recarga a 30 kWh (20% - 80%): 40 minutos.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <img src="img/byd-dolphin-mini-br.webp" class="img-fluid car-image" alt="Carro 2">
+        <p class="car-name">byd-dolphin-mini</p>
+        <div class="car-description">
+          <p>Preço: R$ 115.800
+            Bateria: 38,8 kWh
+            Potência e torque: 75 cv (55 kW) e 13,8 kgfm
+            Autonomia (Inmetro PBEV): 280 km
+            Recarga a 6,6 kWh (20% - 100%): Não informado
+            Recarga a 40 kWh (30% - 80%): 30 minutos</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <img src="img/caoa-chery-icar-2023-1.webp" class="img-fluid car-image" alt="Carro 3">
+        <p class="car-name">caoa-chery-icar</p>
+        <div class="car-description">
+          <p>Preço: R$ 119.990
+            Bateria: 30,8 kWh
+            Potência e torque: 61 cv (45 kW) e 15,3 kgfm
+            Autonomia (Inmetro PBEV): 197 km
+            Recarga a 7,4 kWh (20% - 100%): 5 horas
+            Recarga a 50 kWh (20% - 80%): 36 minutos</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <img src="/img/jac-e-js1---avaliacao-120.000-km.webp" class="img-fluid car-image" alt="Carro 4">
+        <p class="car-name">jac-e-js1</p>
+        <div class="car-description">
+          <p>Preço: R$ 126.900
+            Bateria: 30,2 kWh
+            Potência e torque: 62 cv (45 kW) e 15,3 kgfm
+            Autonomia (Inmetro PBEV): 161 km
+            Recarga a 7,4 kWh (20% - 100%): 8 horas
+            Recarga a 22 kWh (20% - 80%): 1 hora e 15 minutos</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <img src="/img/byd-dolphin-vs.-gwm-ora-03-skin.webp" class="img-fluid car-image" alt="Carro 5">
+        <p class="car-name">byd-dolphin</p>
+        <div class="car-description">
+          <p>Preço: R$ 149.800
+            Bateria: 44,9 kWh
+            Potência e torque: 94 cv (70 kW) e 18,3 kgfm
+            Autonomia (Inmetro PBEV): 291 km
+            Recarga a 6,6 kWh (30% - 100%): 7 horas
+            Recarga a 60 kWh (20% - 80%): 25 minutos.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <img src="/img/gwm-ora-03-skin-teste-br.webp" class="img-fluid car-image" alt="Carro 6">
+        <p class="car-name">-gwm-ora</p>
+        <div class="car-description">
+          <p>Preço: R$ 150.000
+            Bateria: 48 kWh
+            Potência e torque: 171 cv (126 kW) e 25,5 kgfm
+            Autonomia (Inmetro PBEV): 232 km
+            Recarga a 11 kWh (20% - 100%): 3 horas
+            Recarga a 64 kWh (20% - 80%): 30 minutos</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <img src="/img/hyundai-kona-ev-br.webp" class="img-fluid car-image" alt="Carro 7">
+        <p class="car-name">hyundai-kona</p>
+        <div class="car-description">
+          <p>Preço: R$ 189.990
+            Bateria: 39,2 kWh
+            Potência e torque: 136 cv (100 kW) e 40,3 kgfm
+            Autonomia (Inmetro PBEV): 252 km
+            Recarga a 7,2 kWh (20% - 100%): 6 horas e 10 minutos
+            Recarga a 44 kWh (20% - 80%): 47 minutos</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <img src="/img/seres-3---avaliacao-br-7.webp" class="img-fluid car-image" alt="Carro 8">
+        <p class="car-name">seres-3</p>
+        <div class="car-description">
+          <p>Preço: R$ 199.990
+            Bateria: 39,2 kWh
+            Potência e torque: 163 cv (120 kW) e 30,6 kgfm
+            Autonomia (Inmetro PBEV): 206 km
+            Recarga a 7,4 kWh (20% - 100%): 8 horas
+            Recarga a 50 kWh (20% - 80%): 1 hora e 15 minutos.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <img src="/img/fiat-500e-br.webp" class="img-fluid car-image" alt="Carro 9">
+        <p class="car-name">fiat-500e</p>
+        <div class="car-description">
+          <p>Preço: R$ 214.990
+            Bateria: 42 kWh
+            Potência e torque: 118 cv (87 kW) e 22,4 kgfm
+            Autonomia (Inmetro PBEV): 227 km
+            Recarga a 7,4 kWh (20% - 100%): 6 horas
+            Recarga a 85 kWh (20% - 80%): 35 minutos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
